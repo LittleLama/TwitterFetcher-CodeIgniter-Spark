@@ -77,6 +77,12 @@ class twitterfetcher {
 						return false;
 					}
 				}
+				elseif($configObj['count'] > 1 && count($twitterstatus) >= $configObj['count']) {
+					for ($i=0; $i <$configObj['count'] ; $i++) { 
+						$tab[] = $twitterstatus[$i];
+					}
+					return $tab;
+				}
 				else {
 					return $twitterstatus;
 				}
@@ -95,6 +101,12 @@ class twitterfetcher {
 				else {
 					return false;
 				}
+			}
+			elseif($configObj['count'] > 1 && count($twitterstatus) >= $configObj['count']) {
+				for ($i=0; $i <$configObj['count'] ; $i++) { 
+					$tab[] = $twitterstatus[$i];
+				}
+				return $tab;
 			}
 			else {
 				return $twitterstatus;
